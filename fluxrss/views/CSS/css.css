@@ -1,0 +1,140 @@
+body{
+  background-color: rgb(85, 84, 84);
+  background-image: url(image/Sports.png);
+  background-repeat: no-repeat;
+  background-size: 55em;
+  font-family: 'Risque', cursive;
+  font-family: 'Yeseva One', cursive;
+}
+
+
+/*  index.php*/
+
+.title{
+  font-size: 5em;
+  text-align: center;
+  color:#F5F5F5;
+  opacity: 0.6;
+  margin-bottom: 1.5em;
+}
+
+.rubriques{
+  text-decoration: none;
+  color: #F5F5F5;
+  font-size: 1.5em;
+  margin-right: 15px;
+  margin-left: 1em;
+  margin-top: 2em;
+}
+
+.rubriques:hover{
+  opacity: 0.6;
+  transition: 1s;
+}
+
+
+
+/*  Contenu*/
+
+/* wrap: articles */
+.wrap{
+  margin-top:10em;
+  text-decoration: none;
+}
+
+/* Les dernières nouvelles d'Alsace */
+.selected{
+  text-decoration-line: underline;
+  color: #F5F5F5;
+  font-size: 1.5em;
+  opacity: 0.8;
+  text-align: center;
+  margin-left: 7.5em;
+  margin-top: 15em;
+  margin-bottom: 3em;
+}
+
+/* Republicain Lorrain */
+.RL{
+  text-decoration-line: underline;
+  color: #F5F5F5;
+  font-size: 1.5em;
+  opacity: 0.8;
+  text-align: center;
+  margin-left: 7.5em;
+  margin-top: 15em;
+  margin-bottom: 3em;
+}
+
+/* Est Republicain */
+.ER{
+  text-decoration-line: underline;
+  color: #F5F5F5;
+  font-size: 1.5em;
+  opacity: 0.8;
+  margin-left: 7.5em;
+  margin-top: 15em;
+  margin-bottom: 3em;
+}
+
+/* Vosges Matin */
+.VM{
+  text-decoration-line: underline;
+  color: #F5F5F5;
+  font-size: 1.5em;
+  opacity: 0.8;
+  margin-left: 7.5em;
+  margin-top: 15em;
+  margin-bottom: 3em;
+}
+
+/* L'alsace */
+.A{
+  text-decoration-line: underline;
+  color: #F5F5F5;
+  font-size: 1.5em;
+  opacity: 0.8;
+  margin-left: 7.5em;
+  margin-top:15em;
+  margin-bottom: 3em;
+}
+
+
+/* functions.php */
+
+.contenu{
+  margin-left: 3em;
+}
+
+.ss-titre-1{
+  text-decoration-line: underline;
+  margin-bottom: 2px;
+  font-size: 18px;
+  margin-left: 1em;
+}
+
+.ss-titre-2{
+  text-decoration-color: none;
+  text-decoration-line: none;
+}
+
+
+
+.fieldset{
+  margin-right: 10em;
+  margin-left: 7em;
+  margin-bottom: 4em;
+}
+
+.liens{
+  text-decoration: none;
+  text-decoration-color: none;
+  color: #B69DF6;
+
+}
+
+.liens:hover{
+  text-decoration-line: underline;
+  transition: 1.4s;
+    color: #6FB7F2;
+}
