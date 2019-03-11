@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/views/CSS/css.css">
-    <link rel="stylesheet" href="/views/CSS/design.js">
+    <link rel="stylesheet" href="./views/CSS/css.css">
+    <link rel="stylesheet" href="./views/CSS/design.js">
     <link href="https://fonts.googleapis.com/css?family=Risque|Yeseva+One" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<META HTTP-EQUIV="Refresh" CONTENT="3600; URL=index.php"> 

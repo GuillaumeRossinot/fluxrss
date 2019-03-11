@@ -4,7 +4,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="views/CSS/style.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="views/CSS/css.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="views/CSS/design.js" media="all"/>
 </head>
 <header>
 <title><?php echo $title;?></title>

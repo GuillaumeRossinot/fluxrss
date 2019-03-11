@@ -1,28 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css.css">
-    <link rel="stylesheet" href="design.js">
-    <link href="https://fonts.googleapis.com/css?family=Risque|Yeseva+One" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-</head>
-<body>
 
 
 <?php
-
-require "config.php";
-
-try
-{
-$bdd = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
-}
-catch (Exception $e)
-{
-        die('Erreur : ' . $e->getMessage());
-}
 
  // Récuperation du flux rss
 function getFeed($feed_url) {
