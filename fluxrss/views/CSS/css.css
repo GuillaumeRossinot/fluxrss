@@ -7,6 +7,27 @@ body{
   font-family: 'Yeseva One', cursive;
 }
 
+/* menu top */
+
+#nav-header{
+margin-left: 80px;
+margin-top: 0px;
+text-align: left;
+}
+
+#nav-header ul{
+  margin-left: 80px;
+  margin-top: 0px;
+  text-align: left;
+  display:inline;
+}
+
+#nav-header li{
+  border: 1px solid black;
+  margin-right:10px;
+  display:inline;
+  float: left;
+}
 
 /*  index.php*/
 
@@ -32,7 +53,25 @@ body{
   transition: 1s;
 }
 
+/* block message accueil*/
 
+#accountblock{
+  border: 1px solid black;
+}
+
+#accountblock p{
+  border: 1px solid black;
+}
+
+/* block message mon compte*/
+
+#accueilblock{
+  border: 1px solid black;
+}
+
+#accueilblock p{
+  border: 1px solid black;
+}
 
 /*  Contenu*/
 

@@ -1,80 +1,56 @@
 <?php $title = "Accueil" ; ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./views/CSS/css.css">
-    <link rel="stylesheet" href="./views/CSS/design.js">
-    <link href="https://fonts.googleapis.com/css?family=Risque|Yeseva+One" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<META HTTP-EQUIV="Refresh" CONTENT="3600; URL=index.php"> 
-</head>
-<body>
+<h1>Accueil</h1>
 
+<div id='accueilmessage'>
+  
+<?php
 
-<P class="title">SPORT LORRAIN</p>
+if(isset ($_SESSION ['connecte']))
+{
+//print_r($_SESSION['lvl']);
+$id_u = $_SESSION['id_u'];
+$lvl = $_SESSION['lvl'];
+$nom = $_SESSION['nom'];
+$prenom = $_SESSION['prenom'];
 
-<!--  -->
-<a href="#content_1" class="rubriques">Les dernières nouvelles d'Alsace</a>
-<a href="#content_2" class="rubriques">Republicain Lorrain</a>
-<a href="#content_3" class="rubriques">Est Republicain</a>
-<a href="#content_4" class="rubriques">Vosges Matin</a>
-<a href="#content_5" class="rubriques">L'alsace</a>
+echo "
+<div id='accueilblock'>
+    <h2>Bienvenue $nom, $prenom !</h2>
 
+    <p><br/>
+    Merci de visiter notre site internet qui regroupe les flux RSS des sites suivant:<br/>
+    <br/>
+      - <a href = '?p=lastalsacenews'>Les dernières nouvelles d'Alsace</a><br/>
+      - <a href = '?p=republicainlorrain'>Republicain Lorrain</a><br/>
+      - <a href = '?p=estrepublicain'>Est Republicain</a><br/>
+      - <a href = '?p=vosgesmatin'>Vosges Matin</a><br/>
+      - <a href = '?p=alsace'>L'alsace</a><br/>
+      <br/>
+      Vous pouvez acceder a votre compte en suivant le lien suivant : <a href = '?p=account'>mon compte</a>.<br/>
+      <br/>
+      Nous vous souhaitons une agreable visite.<br/>
+      <br/>
+    </p>";
+  
+    }
+    else {
+      echo "
+    <h2>Bienvenue !</h2>
 
-<?php require_once "./model/functions.php"; ?>
-<div id="wrap" class="wrap">
- <!-- Affichage des flux rss trier par la fonction sur une page php -->
-    <div id="mainContent">
-      
-    		<li>
-            <div class="#" id="content_1">
-              <a href="#content_1" class="selected">Les dernières nouvelles d'Alsace</a>
-            </div>
-        </li>
-            <div id="content_1">
-                <?php getFeed("https://www.dna.fr/une-sports/rss"); ?>
-            </div><!--end content 1-->
-
-    		<li>
-          <div class="#" id="content_2">
-            <a href="#content_2" class="RL">Republicain Lorrain</a>
-          </div>
-        </li>
-    		<div id="content_2">
-                <?php getFeed("https://www.republicain-lorrain.fr/sports/sport-lorrain/rss"); ?>
-        </div><!--end content 2-->
-
-    		<li>
-          <div class="#" id="content_3">
-            <a href="#content_3" class="ER">Est Republicain</a>
-          </div>
-        </li>
-        <div id="content_3">
-            <?php getFeed("https://www.estrepublicain.fr/sport-lorrain/rss"); ?>
-        </div><!--end content 3-->
-
-    		<li>
-          <div class="#" id="content_4">
-            <a href="#content_4" class="VM">Vosges Matin</a>
-          </div>
-        </li>
-        <div id="content_4">
-            <?php getFeed("https://www.vosgesmatin.fr/sport/sport-lorrain/rss"); ?>
-        </div><!--end content 4-->
-
-    		<li>
-          <div class="#" id="content_5">
-            <a href="#content_5" class="A">L'alsace</a>
-          </div>
-        </li>
-        <div id="content_5">
-            <?php getFeed("https://www.lalsace.fr/sport/rss"); ?>
-        </div><!--end content 5-->
-
-    </div><!--end main content -->
-
-</div><!--end wrap-->
-</body>
-</html>
+    <p><br/>
+    Merci de visiter notre site internet qui regroupe les flux RSS des sites suivant:<br/>
+    <br/>
+    - <a href = '?p=lastalsacenews'>Les dernières nouvelles d'Alsace</a><br/>
+    - <a href = '?p=republicainlorrain'>Republicain Lorrain</a><br/>
+    - <a href = '?p=estrepublicain'>Est Republicain</a><br/>
+    - <a href = '?p=vosgesmatin'>Vosges Matin</a><br/>
+    - <a href = '?p=alsace'>L'alsace</a><br/>
+      <br/>
+      Nous vous souhaitons une agreable visite.<br/>
+      <br/>
+    </p>
+  </div>";
+  }
+?>
+</div>

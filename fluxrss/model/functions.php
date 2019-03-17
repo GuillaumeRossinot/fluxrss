@@ -1,9 +1,11 @@
-
-
 <?php
+
+require 'model.php';
 
  // Récuperation du flux rss
 function getFeed($feed_url) {
+
+	global $bdd;
 
 	$arrContextOptions=array(
 		  "ssl"=>array(
@@ -22,7 +24,7 @@ function getFeed($feed_url) {
           // tri et affichage des flux rss par titre, description, lien, date et categorie.
     echo "<ul>";
 
-    foreach($x->channel->item as $entry) {
+    foreach($x->channel->item as $entry ) {
         echo "<fieldset class='fieldset'><br>
 
                   <div class='ss-titre-1'> <li> <b> Titre : </b> </li> </div>
@@ -31,7 +33,6 @@ function getFeed($feed_url) {
       											      <a href='$entry->link' title='$entry->title' class='liens'>" . $entry->title . "</a>
       									     </div>
                         </div>
-
 
                   <div class='ss-titre-1'> <b> Description : </b> </div>
                   <div class='contenu'>" . $entry->description . "</div><br>
@@ -42,32 +43,42 @@ function getFeed($feed_url) {
       									<a href='$entry->link' link='$entry->link' class='liens'>" . $entry->link . "</a>
       						</div>
                   </div><br>
-
-
-      						<div class='ss-titre-1'> <b> Date de publication : </b> </div>
-                  <div class='contenu'> " . $entry->pubDate . "</div><br>
-
-      						<div class='ss-titre-1'> <b> Category : </b> </div>
-                  <div class='contenu'> " . $entry->category . "</div>
-
 						 </fieldset>";
 						 
     }
-    echo "</ul>";
+		echo "</ul>";
+		
+		echo"<ul class='pagination'>
+				<li class='page-item'>
+					<a class='page-link' href='#' aria-label='Previous'>
+						<span aria-hidden='true'>&laquo;</span>
+						<span class='sr-only'>Previous</span>
+					</a>
+				</li>
+				<li class='page-item'><a class='page-link' href='#'>1</a></li>
+				<li class='page-item'><a class='page-link' href='#'>2</a></li>
+				<li class='page-item'><a class='page-link' href='#'>3</a></li>
+				<li class='page-item'>
+					<a class='page-link' href='#' aria-label='Next'>
+						<span aria-hidden='true'>&raquo;</span>
+						<span class='sr-only'>Next</span>
+					</a>
+				</li>
+			</ul>";
 	
-/* 	foreach($x->channel->item as $entry){
-		$titre = $x->channel->item->title;
-		$url = $x->channel->item->link;
-		$datepub = $x->channel->item->pubDate;
-		$desc = $x->channel->item->description;
-		$category = $x->channel->item->category;
-		$image = $x->channel->item->image;
-		$auteur = $x->channel->item->auteur;
+ 	//foreach($x->channel->item as $entry){
+		//$titre = $x->channel->item->title;
+		//$url = $x->channel->item->link;
+		//$datepub = $x->channel->item->pubDate;
+		//$desc = $x->channel->item->description;
+		//$category = $x->channel->item->category;
+		//$image = $x->channel->item->image;
+		//$auteur = $x->channel->item->auteur;
 		//$requete = $bdd->query("INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie,imagedescription,auteur) 
-								//VALUES ('CURRENT_TIMESTAMP(),$titre,$url,$datepub,$desc,$category,$image,$auteur'));
+								//VALUES ('CURRENT_TIMESTAMP(),$titre,$url,$datepub,$desc,$category,$image,$auteur')");
 		//$reponse = $requete->fecth();
-		echo"INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie) VALUES ('CURRENT_TIMESTAMP(),$titre,$url,$datepub,$desc,$category')<br>";
-	} */
+		//echo"INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie) VALUES ('CURRENT_TIMESTAMP(),$titre,$url,$datepub,$desc,$category')<br>";
+	//} 
 
 
 }
