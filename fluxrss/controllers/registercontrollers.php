@@ -11,11 +11,11 @@ $Mdp = "";
 
 if(isset($_POST['submit']))
 {
-  $Mdp = sha1($_POST['Mdp']);
-  $Email = $_POST['Email'];
-  $Login = $_POST['Login'];
-  $Nom = $_POST['Nom'];
-  $Prenom = $_POST['Prenom'];
+  $Mdp = sha1(htmlentities(trim($_POST['Mdp'])));
+  $Email = htmlentities(trim($_POST['Email']));
+  $Login = htmlentities(trim($_POST['Login']));
+  $Nom = htmlentities(trim($_POST['Nom']));
+  $Prenom = htmlentities(trim($_POST['Prenom']));
   $submit = $_POST['submit'];
 
       if(register())

@@ -31,11 +31,13 @@ echo "
       <br/>
       Nous vous souhaitons une agreable visite.<br/>
       <br/>
-    </p>";
+    </p>
+    </div>";
   
     }
     else {
       echo "
+  <div id='accueilblock'>
     <h2>Bienvenue !</h2>
 
     <p><br/>

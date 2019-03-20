@@ -1,8 +1,9 @@
+
 <?php
 
 require 'model.php';
 
- // Récuperation du flux rss
+ // RĂ©cuperation du flux rss
 function getFeed($feed_url) {
 
 	global $bdd;
@@ -25,6 +26,16 @@ function getFeed($feed_url) {
     echo "<ul>";
 
     foreach($x->channel->item as $entry ) {
+			
+			$titre = $entry->title;
+			$url = $entry->link;
+			$datepub = $entry->pubDate;
+			$desc = $entry->description;
+			$category = $entry->category;
+			$image = $entry->image;
+			$auteur = $entry->auteur;
+			$date = date("d-m-Y");
+
         echo "<fieldset class='fieldset'><br>
 
                   <div class='ss-titre-1'> <li> <b> Titre : </b> </li> </div>
@@ -42,9 +53,21 @@ function getFeed($feed_url) {
                   <div class='contenu'>
       									<a href='$entry->link' link='$entry->link' class='liens'>" . $entry->link . "</a>
       						</div>
-                  </div><br>
-						 </fieldset>";
-						 
+									</div><br>";
+									
+						 $requete = $bdd->prepare("INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie) 
+						 				VALUES (:date,:titre,:url,:datepub,:desc,:category)");
+						 $requete->bindParam('date', $date, PDO::PARAM_STR);
+						 $requete->bindParam('titre', $titre, PDO::PARAM_STR);
+						 $requete->bindParam('url', $url, PDO::PARAM_STR);
+						 $requete->bindParam('datepub', $datepub, PDO::PARAM_STR);
+						 $requete->bindParam('desc', $desc, PDO::PARAM_STR);
+						 $requete->bindParam('category', $category, PDO::PARAM_STR);
+						 $reponse = $requete->execute();
+
+					 //echo "INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie) VALUES ('$date','$titre','$url','$datepub','$desc','$category')<br>";
+				 
+					 echo"</fieldset>";
     }
 		echo "</ul>";
 		
@@ -65,21 +88,6 @@ function getFeed($feed_url) {
 					</a>
 				</li>
 			</ul>";
-	
- 	//foreach($x->channel->item as $entry){
-		//$titre = $x->channel->item->title;
-		//$url = $x->channel->item->link;
-		//$datepub = $x->channel->item->pubDate;
-		//$desc = $x->channel->item->description;
-		//$category = $x->channel->item->category;
-		//$image = $x->channel->item->image;
-		//$auteur = $x->channel->item->auteur;
-		//$requete = $bdd->query("INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie,imagedescription,auteur) 
-								//VALUES ('CURRENT_TIMESTAMP(),$titre,$url,$datepub,$desc,$category,$image,$auteur')");
-		//$reponse = $requete->fecth();
-		//echo"INSERT INTO articles (daterecuperation,titrearticle,urlarticle,datepublication,description,categorie) VALUES ('CURRENT_TIMESTAMP(),$titre,$url,$datepub,$desc,$category')<br>";
-	//} 
-
 
 }
 ?>
